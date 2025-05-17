@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@theme {
+  --primary: #bd3636;
+}

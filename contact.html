@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RK Trends </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet"/>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <style>
+    .logo {
+      font-family: 'Patrick Hand', cursive;
+    }
+  </style>
+</head>
+<body class="container mx-auto bg-cover bg-center bg-no-repeat" style="background-image:linear-gradient(rgba(0, 0, 0, 0.194),rgba(0, 0, 0, 0)) ,url('hoddies images/469cd7fc-273b-458a-ba88-5e106ac2bac7.jpeg') ;"">
+
+  <!-- Header -->
+  <header>
+    <nav class="flex justify-between items-center p-4 bg-gray-200/30 rounded-2xl mt-2 backdrop-blur-md">
+      <div class="logo">
+        <h1 class="text-5xl">RK <span class="text-amber-500">Trends</span></h1>
+      </div>
+      <div class="hidden md:flex space-x-10 text-white">
+        <a class="hover:text-amber-500 text-xl transition-colors duration-300" href="index.html" >Home</a>
+        <a class="hover:text-amber-500 text-xl transition-colors duration-300" href="/women.html">Women</a>
+        <a class="hover:text-amber-500 text-xl transition-colors duration-300" href="/men.html">Men</a>
+        <a class="hover:text-amber-500 text-xl transition-colors duration-300" href="/kids.html">Kids</a>
+        <a class="hover:text-amber-500 text-xl transition-colors duration-300" href="/contact.html">Contact</a>
+      </div>
+      <div class="flex space-x-4">
+        <i
+          class="fa-regular fa-heart text-red-700 rounded-2xl transition-transform duration-300 hover:-translate-y-1"
+        ></i>
+        <i
+          class="fa-solid fa-cart-shopping text-white rounded-2xl transition-transform duration-300 hover:-translate-y-1"
+        ></i>
+        <i
+          class="fa-solid fa-user text-white rounded-2xl transition-transform duration-300 hover:-translate-y-1"
+        ></i>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-white focus:outline-none">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+  <section class="min-h-screen  flex items-center justify-center px-4 py-12">
+  <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 bg-white rounded-lg shadow-lg overflow-hidden">
+    
+    <!-- Left: Contact Form Box -->
+    <div class="p-8">
+      <h2 class="text-4xl font-bold mb-4 text-gray-800 logo">Get in <span class="text-amber-500">Touch</span></h2>
+      <p class="text-gray-500 mb-6">Fill out the form and we’ll get back to you as soon as possible.</p>
+
+      <form class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Name</label>
+          <input type="text" placeholder="Your Name"
+            class="w-full mt-1 border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-black focus:border-black">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" placeholder="Your Email"
+            class="w-full mt-1 border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-black focus:border-black">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Message</label>
+          <textarea rows="4" placeholder="Your Message"
+            class="w-full mt-1 border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-black focus:border-black"></textarea>
+        </div>
+        <button type="submit"
+          class="bg-black text-white py-2 px-6 rounded-md hover:bg-gray-800 transition duration-300">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Right: Banner Image -->
+    <div class="hidden md:block">
+      <img src="/hoddies images/conta.jpeg" alt="Contact Banner" class="w-full h-full object-cover" />
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
