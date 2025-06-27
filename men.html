@@ -33,56 +33,64 @@
 </head>
 <body class="container mx-auto bg-cover bg-center bg-no-repeat" style="background-image:linear-gradient(rgba(0, 0, 0, 0.268),rgba(0, 0, 0, 0)) ,url('hoddies images/469cd7fc-273b-458a-ba88-5e106ac2bac7.jpeg') ;">
   <!-- Header -->
-  <header>
-    <nav class="flex justify-between items-center p-6 bg-gray-200/30 rounded-2xl mt-2 backdrop-blur-md">
+<header class="relative z-50 container mx-auto px-4">
+  <!-- Wrapper for peer-based toggling -->
+  <div class="relative">
+
+    <!-- Hamburger Checkbox (Peer) -->
+    <input type="checkbox" id="menu-toggle" class="hidden peer" />
+
+    <!-- Navigation Bar -->
+    <nav class="flex justify-between items-center p-4 bg-gray-200/30 rounded-2xl mt-2 backdrop-blur-md">
+      <!-- Logo -->
       <div class="logo">
-        <h1 class="text-5xl">RK <span class="text-amber-500">Trends</span></h1>
+        <h1 class="text-5xl text-white font-hand">
+          RK <span class="text-amber-500">Trends</span>
+        </h1>
       </div>
-      <div class="hidden md:flex space-x-10">
-        <a
-          class="hover:text-amber-500 text-xl transition-colors duration-300"
-          href="index.html"
-          >Home</a
-        >
-        <a
-          class="hover:text-amber-500 text-xl transition-colors duration-300"
-          href="women.html"
-          >Women</a
-        >
-        <a
-          class="hover:text-amber-500 text-xl transition-colors duration-300"
-          href="men.html"
-          >Men</a
-        >
-        <a
-          class="hover:text-amber-500 text-xl transition-colors duration-300"
-          href="kids.html"
-          >Kids</a
-        >
-        <a
-          class="hover:text-amber-500 text-xl transition-colors duration-300"
-          href="#contact"
-          >Contact</a
-        >
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex space-x-10 text-white font-semibold text-xl">
+        <a href="./index.html" class="hover:text-amber-500 transition">Home</a>
+        <a href="/women.html" class="hover:text-amber-500 transition">Women</a>
+        <a href="/men.html" class="hover:text-amber-500 transition">Men</a>
+        <a href="/kids.html" class="hover:text-amber-500 transition">Kids</a>
+        <a href="/contact.html" class="hover:text-amber-500 transition">Contact</a>
       </div>
-      <div class="flex space-x-4">
-        <i
-          class="fa-regular fa-heart text-red-700 rounded-2xl transition-transform duration-300 hover:-translate-y-1"
-        ></i>
-        <i
-          class="fa-solid fa-cart-shopping text-gray-700 rounded-2xl transition-transform duration-300 hover:-translate-y-1"
-        ></i>
-        <i
-          class="fa-solid fa-user text-gray-700 rounded-2xl transition-transform duration-300 hover:-translate-y-1"
-        ></i>
+
+      <!-- Desktop Icons -->
+      <div class="hidden md:flex space-x-4 text-white text-2xl">
+        <i class="fa-regular fa-heart text-red-700 hover:-translate-y-1 transition"></i>
+        <i class="fa-solid fa-cart-shopping hover:-translate-y-1 transition"></i>
+        <i class="fa-solid fa-user hover:-translate-y-1 transition"></i>
       </div>
-      <div class="md:hidden">
-        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
+
+      <!-- Hamburger Icon for Mobile -->
+      <label for="menu-toggle" class="md:hidden text-white text-3xl cursor-pointer z-50">
+        <i class="fa-solid fa-bars"></i>
+      </label>
     </nav>
-  </header>    
+
+    <!-- Mobile Overlay -->
+    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 peer-checked:opacity-100 peer-checked:pointer-events-auto md:hidden z-40"></div>
+
+    <!-- Mobile Slide-in Menu -->
+    <div class="fixed top-0 right-0 w-3/4 max-w-xs h-full bg-amber-600 text-white shadow-lg translate-x-full transition-transform duration-300 peer-checked:translate-x-0 md:hidden rounded-l-2xl z-50">
+      <div class="flex justify-end p-4">
+        <label for="menu-toggle" class="text-3xl text-white cursor-pointer">
+          <i class="fa-solid fa-times"></i>
+        </label>
+      </div>
+      <nav class="flex flex-col space-y-6 px-6 text-xl font-semibold">
+        <a href="./index.html" class="hover:text-gray-300">Home</a>
+        <a href="/women.html" class="hover:text-gray-300">Women</a>
+        <a href="/men.html" class="hover:text-gray-300">Men</a>
+        <a href="/kids.html" class="hover:text-gray-300">Kids</a>
+        <a href="/contact.html" class="hover:text-gray-300">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
 
   <!-- Women Collection -->
 <section id="women" class="my-16 px-4 md:px-10">
@@ -299,5 +307,60 @@
     </div>
   </div>
 </section>
+
+
+<footer class="bg-amber-700/30 text-white px-6 py-10">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
+    
+    <!-- Brand Section -->
+    <div>
+      <h1 class="text-5xl logo pb-4">RK <span class="text-amber-500">Trends</span></h1
+      <p class="text-sm leading-relaxed">
+        Discover the latest fashion trends for men, women, and kids. At RK Trends, style meets comfort with quality you can trust — your one-stop shop for everyday essentials and occasion wear.
+      </p>
+      <div class="flex space-x-4 mt-4">
+        <a href="#" class="text-white text-xl hover:text-amber-400"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-white text-xl hover:text-amber-400"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white text-xl hover:text-amber-400"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-white text-xl hover:text-amber-400"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h3 class="text-xl font-bold mb-4">Get In Touch</h3>
+      <p class="mb-2"><strong>Address:</strong><br>Jigjiga, Ethiopia</p>
+      <p class="mb-2"><strong>Email:</strong><br>rktrends@gmail.com</p>
+      <p><strong>Phone:</strong><br>+251 91 566 7898</p>
+    </div>
+
+    <!-- Shop Links -->
+    <div>
+      <h3 class="text-xl font-bold mb-4">Shop</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-amber-400">Home</a></li>
+        <li><a href="#" class="hover:text-amber-400">Women</a></li>
+        <li><a href="#" class="hover:text-amber-400">Men</a></li>
+        <li><a href="#" class="hover:text-amber-400">Kids</a></li>
+        <li><a href="#" class="hover:text-amber-400">Accessories</a></li>
+        <li><a href="#" class="hover:text-amber-400">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div>
+      <h3 class="text-xl font-bold mb-4">Join Our Newsletter</h3>
+      <input type="text" placeholder="Your Name" class="w-full p-2 mb-3 rounded text-black" />
+      <input type="email" placeholder="Your Email" class="w-full p-2 mb-3 rounded text-black" />
+      <button class="w-full bg-amber-500 text-white py-2 rounded hover:bg-amber-600 transition">Subscribe</button>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="border-t border-neutral-700 mt-10 pt-6 text-center text-sm">
+    © <span class="font-bold">RK Trends</span>. All rights reserved. Designed with <i class="fas fa-heart text-red-500"></i> by Amira
+  </div>
+</footer>
 </body>
 </html>
