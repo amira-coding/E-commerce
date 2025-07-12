@@ -15,133 +15,110 @@
     }
   </style>
 </head>
-<body class="container mx-auto bg-cover bg-center bg-no-repeat" style="background-image:linear-gradient(rgba(0, 0, 0, 0.243),rgba(0, 0, 0, 0)) ,url('hoddies images/469cd7fc-273b-458a-ba88-5e106ac2bac7.jpeg') ;"">
-<header class="relative z-50 container mx-auto px-4">
-  <!-- Wrapper for peer-based toggling -->
+<body class="container mx-auto bg-white">
+<header class="fixed top-0 left-0 right-0 z-50 container mx-auto px-4">
   <div class="relative">
-
-    <!-- Hamburger Checkbox (Peer) -->
     <input type="checkbox" id="menu-toggle" class="hidden peer" />
 
-    <!-- Navigation Bar -->
     <nav class="flex justify-between items-center p-4 bg-gray-200/30 rounded-2xl mt-2 backdrop-blur-md">
-      <!-- Logo -->
       <div class="logo">
-        <h1 class="text-5xl text-white font-hand">
+        <h1 class="text-5xl text-black font-hand">
           RK <span class="text-amber-500">Trends</span>
         </h1>
       </div>
 
-      <!-- Desktop Navigation -->
-      <div class="hidden md:flex space-x-10 text-white font-semibold text-xl">
+      <div class="hidden md:flex space-x-10 text-black font-semibold text-xl">
         <a href="./index.html" class="hover:text-amber-500 transition">Home</a>
         <a href="/women.html" class="hover:text-amber-500 transition">Women</a>
         <a href="/men.html" class="hover:text-amber-500 transition">Men</a>
-        <a href="/kids.html" class="hover:text-amber-500 transition">Kids</a>
+        <a href="/kids.html" class="hover:text-amber-500 transition">Electronics</a>
         <a href="/contact.html" class="hover:text-amber-500 transition">Contact</a>
       </div>
 
-      <!-- Desktop Icons -->
-      <div class="hidden md:flex space-x-4 text-white text-2xl">
+      <div class="hidden md:flex space-x-4 text-black text-2xl">
         <i class="fa-regular fa-heart text-red-700 hover:-translate-y-1 transition"></i>
-        <i class="fa-solid fa-cart-shopping hover:-translate-y-1 transition"></i>
+        <a href="cart.html" class="relative hover:-translate-y-1 transition">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cart-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+        </a>
         <i class="fa-solid fa-user hover:-translate-y-1 transition"></i>
       </div>
 
-      <!-- Hamburger Icon for Mobile -->
-      <label for="menu-toggle" class="md:hidden text-white text-3xl cursor-pointer z-50">
+      <label for="menu-toggle" class="md:hidden text-black text-3xl cursor-pointer z-50">
         <i class="fa-solid fa-bars"></i>
       </label>
     </nav>
 
-    <!-- Mobile Overlay -->
     <div class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 peer-checked:opacity-100 peer-checked:pointer-events-auto md:hidden z-40"></div>
 
-    <!-- Mobile Slide-in Menu -->
-    <div class="fixed top-0 right-0 w-3/4 max-w-xs h-full bg-amber-600 text-white shadow-lg translate-x-full transition-transform duration-300 peer-checked:translate-x-0 md:hidden rounded-l-2xl z-50">
+    <div class="fixed top-0 right-0 w-3/4 max-w-xs h-full bg-amber-600 text-black shadow-lg translate-x-full transition-transform duration-300 peer-checked:translate-x-0 md:hidden rounded-l-2xl z-50">
       <div class="flex justify-end p-4">
-        <label for="menu-toggle" class="text-3xl text-white cursor-pointer">
+        <label for="menu-toggle" class="text-3xl text-black cursor-pointer">
           <i class="fa-solid fa-times"></i>
         </label>
       </div>
       <nav class="flex flex-col space-y-6 px-6 text-xl font-semibold">
-        <a href="./index.html" class="hover:text-gray-300">Home</a>
-        <a href="/women.html" class="hover:text-gray-300">Women</a>
-        <a href="/men.html" class="hover:text-gray-300">Men</a>
-        <a href="/kids.html" class="hover:text-gray-300">Kids</a>
-        <a href="/contact.html" class="hover:text-gray-300">Contact</a>
+        <a href="./index.html" class="hover:text-gray-800">Home</a>
+        <a href="/women.html" class="hover:text-gray-800">Women</a>
+        <a href="/men.html" class="hover:text-gray-800">Men</a>
+        <a href="/kids.html" class="hover:text-gray-800">Electronics</a>
+        <a href="/contact.html" class="hover:text-gray-800">Contact</a>
       </nav>
     </div>
   </div>
 </header>
 
 
-
-
-  <!-- Swiper Slider -->
-  <section class="my-10 ">
+<!-- Swiper Slider -->
+<section class="my-10">
+  <div class="container mx-auto px-4">
     <div class="swiper mySwiper min-h-[80vh]">
       <div class="swiper-wrapper">
         <!-- Slide 1 -->
-         <div class="swiper-slide flex flex-col md:flex-row items-center gap-20 px-6 md:px-12 py-10">
-          <div class="md:w-1/2  text-white">
-            <h1
-              class="logo md:text-9xl tracking-wide  text-6xl font-bold leading-snug">
+        <div class="swiper-slide flex flex-col md:flex-row items-center gap-12 py-10 px-4">
+          <div class="md:w-1/2 text-black mt-0">
+            <h1 class="logo md:text-9xl text-6xl font-bold tracking-wide leading-snug">
               Discover Your Style with <span class="text-amber-500">RK Trends</span>
             </h1>
-            <p class="mt-6 text-lg md:text-xl text-gray-50">
+            <p class="mt-6 text-lg md:text-2xl text-gray-700">
               From everyday essentials to standout statement pieces — find the
               fashion that fits your vibe.
             </p>
             <a href="#women">
-              <button
-                class="mt-8 bg-amber-500 text-white px-8 py-3 rounded-lg hover:bg-amber-600 transition duration-300 flex items-center gap-2"
-              >
-                Shop Now
-                <i class="fa-solid fa-arrow-right"></i>
+              <button class="mt-8 bg-amber-500 text-white px-8 py-3 rounded-lg hover:bg-amber-600 transition duration-300 flex items-center gap-2">
+                Shop Now <i class="fa-solid fa-arrow-right"></i>
               </button>
             </a>
           </div>
           <div class="md:w-1/2 w-full">
-            <img
-              src="/hoddies images/images/bann2.png"
-              alt="Fashion banner"
-              class="rounded-lg  md:w-full  object-cover"
-            />
+            <img src="/hoddies images/images/bann2.png" alt="Fashion banner" class="rounded-lg md:w-full object-cover" />
           </div>
         </div>
 
         <!-- Slide 2 -->
-        <div
-          class="swiper-slide flex flex-col md:flex-row items-center gap-12 px-6 md:px-12 py-10"
-        >
-          <div class="md:w-1/2  text-gray-900">
-            <h1
-              class="logo text-6xl tracking-wide md:text-9xl font-bold leading-tight"
-            >
-               The Baati Gang Vibe with <span class="text-amber-500">RK Trends</span>
+        <div class="swiper-slide flex flex-col md:flex-row items-center gap-12 py-10 px-4">
+          <div class="md:w-1/2 text-gray-900">
+            <h1 class="logo text-6xl md:text-9xl font-bold tracking-wide leading-tight">
+              The Baati Gang Vibe 
             </h1>
             <p class="mt-6 text-lg md:text-xl text-gray-700">
               Baati Gang style — bold, vibrant, and uniquely you. From everyday comfort to standout designs, dress your story with RK Trends.
             </p>
             <a href="#women">
               <button class="mt-8 bg-amber-500 text-white px-8 py-3 rounded-lg hover:bg-amber-600 transition duration-300 flex items-center gap-2">
-                Shop Now
-                <i class="fa-solid fa-arrow-right"></i>
+                Shop Now <i class="fa-solid fa-arrow-right"></i>
               </button>
             </a>
           </div>
           <div class="md:w-1/2 w-full">
-  <img src="./hoddies images/images/4afd6445-9984-4890-b207-f051d718ec8f-removebg-preview.png"alt="Fashion banner" class=" w-[900px] h-[50%] object-cover"/>
-
-      </div>
+            <img src="./hoddies images/images/4afd6445-9984-4890-b207-f051d718ec8f-removebg-preview.png" alt="Fashion banner" class="w-[900px] h-[50%] object-cover" />
+          </div>
         </div>
-             <!-- Slide 3 -->
-        <div
-          class="swiper-slide flex flex-col md:flex-row items-center gap-12 px-6 md:px-12 py-10">
-          <div class="md:w-1/2  text-gray-900">
-            <h1
-              class="logo text-6xl tracking-wide md:text-9xl font-bold leading-tight">
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide flex flex-col md:flex-row items-center gap-12 py-10 px-4">
+          <div class="md:w-1/2 text-gray-900">
+            <h1 class="logo text-6xl md:text-9xl font-bold tracking-wide leading-tight">
               Discover Your Style with <span class="text-amber-500">RK Trends</span>
             </h1>
             <p class="mt-6 text-lg md:text-xl text-gray-700">
@@ -150,288 +127,31 @@
             </p>
             <a href="#women">
               <button class="mt-8 bg-amber-500 text-white px-8 py-3 rounded-lg hover:bg-amber-600 transition duration-300 flex items-center gap-2">
-                Shop Now
-                <i class="fa-solid fa-arrow-right"></i>
+                Shop Now <i class="fa-solid fa-arrow-right"></i>
               </button>
             </a>
           </div>
           <div class="md:w-1/2 w-full">
-        <img src="./hoddies images/53e80d83-bb6c-46f2-9b10-afb73a2d9075-removebg-preview.png"alt="Fashion banner" class=" w-[900px] h-50%] object-cover"/>
-      </div>
-        </div>
-        <!-- Slide 4 -->
-        
-        <div
-          class="swiper-slide flex flex-col md:flex-row items-center gap-12 px-6 md:px-12 py-10">
-          <div class="md:w-1/2  text-gray-900">
-            <h1
-              class="logo text-6xl tracking-wide md:text-9xl font-bold leading-tight">
-             Little Legends <span class="text-amber-500">RK Trends</span>
-            </h1>
-            <p class="mt-6 text-lg md:text-xl text-gray-700">
-              Comfort meets cool for your little explorer. Durable, trendy styles perfect for every playdate and adventure.
-            </p>
-            <a href="#women">
-              <button class="mt-8 bg-amber-500 text-white px-8 py-3 rounded-lg hover:bg-amber-600 transition duration-300 flex items-center gap-2">
-                Shop Now
-                <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </a>
+            <img src="./hoddies images/53e80d83-bb6c-46f2-9b10-afb73a2d9075-removebg-preview.png" alt="Fashion banner" class="w-[900px] h-[50%] object-cover" />
           </div>
-          <div class="md:w-1/2 w-full">
-        <img src="./hoddies images/images/Neckline_Collar__nLined_For_Added_Warmth_No_-removebg-preview.png"alt="Fashion banner" class=" w-[900px] h-[50%] object-cover"/>
-      </div>
         </div>
-        
-               <!-- Slide 5 --> 
-        <div
-          class="swiper-slide flex flex-col md:flex-row items-center gap-12 px-6 md:px-12 py-10">
-          <div class="md:w-1/2  text-gray-900">
-            <h1
-              class="logo text-6xl tracking-wide md:text-9xl font-bold leading-tight">
-            <span class="text-amber-500">RK Trends</span> — Where Modesty Meets Style 
-            </h1>
-            <p class="mt-6 text-lg md:text-xl text-gray-700">
-              Discover our beautifully crafted Muslim dresses that combine tradition with modern style. From elegant abayas to everyday jilbabs, our collection celebrates modesty, comfort, and confidence for every woman.
 
-            </p>
-            <a href="#women">
-              <button class="mt-8 bg-amber-500 text-white px-8 py-3 rounded-lg hover:bg-amber-600 transition duration-300 flex items-center gap-2">
-                Shop Now
-                <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </a>
-          </div>
-          <div class="md:w-1/2 w-full">
-        <img src="./hoddies images/images/images__3_-removebg-preview.png"alt="Fashion banner" class=" w-[900px] h-[40%] object-cover"/>
-      </div>
-        </div>
         
+
       </div>
+
       <!-- Pagination -->
-      <div class="swiper-pagination "></div>
+      <div class="swiper-pagination"></div>
     </div>
-    <!-- Navigation buttons below slider -->
-      <div class="md:flex hidden justify-center space-x-6 mt-4 text-gray-700 hover:text-amber-500">
+
+    <!-- Navigation buttons -->
+    <div class="md:flex hidden justify-center space-x-6 mt-4 text-gray-700 hover:text-amber-500">
       <div class="swiper-button-prev cursor-pointer text-2xl p-2 rounded-full bg-gray-400 hover:bg-gray-500"></div>
       <div class="swiper-button-next cursor-pointer text-2xl p-2 rounded-full bg-gray-400 hover:bg-gray-500"></div>
     </div>
-  </section>
-
-<!-- latest products -->
-<section class="my-16 px-4 md:px-10 bg-white pt-7 text-black">
-  <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800 logo">
-    Latest Products
-  </h2>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
-    
-    <!-- Product 1 -->
-    <div class=" overflow-y-hidden p-4">
-      <img src="hoddies images/images/ae94d8d4-3d0a-4118-920b-38b8a6223a3a.jpeg " alt="Product 1" class="w-full h-[600px]  object-cover rounded-md   transition-transform duration-300 hover:scale-105">
-      <h3 class="mt-4 text-lg font-semibold text-gray-800">Classic Hoodie</h3>
-      <div class="flex items-center justify-between mt-2">
-        <div class="text-amber-500 text-sm">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <i class="fa-regular fa-heart text-red-600 text-xl hover:scale-110 transition-transform duration-200 cursor-pointer"></i>
-      </div>
-      <p class="text-amber-600 font-bold mt-2">$39.99</p>
-      <a href="#" class="inline-block mt-4 bg-amber-500 text-white px-4 py-2 rounded hover:bg-amber-600">Buy Now</a>
-    </div>
-
-    <!-- Product 2 -->
-    <div class="  overflow-hidden p-4">
-      <img src="hoddies images/images/6122a0ec-6174-4215-a666-f6e44298ad10.jpeg" alt="Product 2" class="w-full h-[600px]  object-cover rounded-md transition-transform duration-300 hover:scale-105">
-      <h3 class="mt-4 text-lg font-semibold text-gray-800">Casual Cool</h3>
-      <div class="flex items-center justify-between mt-2">
-        <div class="text-amber-500 text-sm">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <i class="fa-regular fa-heart text-red-600 text-xl hover:scale-110 transition-transform duration-200 cursor-pointer"></i>
-      </div>
-      <p class="text-amber-600 font-bold mt-2">$49.99</p>
-      <a href="#" class="inline-block mt-4 bg-amber-500 text-white px-4 py-2 rounded hover:bg-amber-600">Buy Now</a>
-    </div>
-
-    <!-- Product 3 -->
-    <div class="  rounded-xl overflow-hidden p-4">
-      <img src="hoddies images/images/Abaya-Kleid mit Rundhalsausschnitt und langen….jpeg" alt="Product 3" class="w-full h-[600px] object-cover rounded-md transition-transform duration-300 hover:scale-105">
-      <h3 class="mt-4 text-lg font-semibold text-gray-800">Oversized Streetwear</h3>
-      <div class="flex items-center justify-between mt-2">
-        <div class="text-amber-500 text-sm">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <i class="fa-regular fa-heart text-red-600 text-xl hover:scale-110 transition-transform duration-200 cursor-pointer"></i>
-      </div>
-      <p class="text-amber-600 font-bold mt-2">$34.99</p>
-      <a href="#" class="inline-block mt-4 bg-amber-500 text-white px-4 py-2 rounded hover:bg-amber-600">Buy Now</a>
-    </div>
-
-    <!-- Product 4 -->
-    <div class=" rounded-xl overflow-hidden p-4">
-      <img src="hoddies images/images/hoddies (25).jpeg" alt="Product 4" class="w-full h-[600px] object-cover rounded-md transition-transform duration-300 hover:scale-105">
-      <h3 class="mt-4 text-lg font-semibold text-gray-800">Cozy Comfort</h3>
-      <div class="flex items-center justify-between mt-2">
-        <div class="text-amber-500 text-sm">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <i class="fa-regular fa-heart text-red-600 text-xl hover:scale-110 transition-transform duration-200 cursor-pointer"></i>
-      </div>
-      <p class="text-amber-600 font-bold mt-2">$44.99</p>
-      <a href="#" class="inline-block mt-4 bg-amber-500 text-white px-4 py-2 rounded hover:bg-amber-600">Buy Now</a>
-    </div>
-    <div class=" rounded-xl overflow-hidden p-4">
-      <img src="hoddies images/images/5a544541-9fdf-4ac3-8f57-bade984b2afc.jpeg" alt="Product 4" class="w-full h-[600px] object-cover rounded-md transition-transform duration-300 hover:scale-105">
-      <h3 class="mt-4 text-lg font-semibold text-gray-800">Playful & Chic</h3>
-      <div class="flex items-center justify-between mt-2">
-        <div class="text-amber-500 text-sm">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <i class="fa-regular fa-heart text-red-600 text-xl hover:scale-110 transition-transform duration-200 cursor-pointer"></i>
-      </div>
-      <p class="text-amber-600 font-bold mt-2">$44.99</p>
-      <a href="#" class="inline-block mt-4 bg-amber-500 text-white px-4 py-2 rounded hover:bg-amber-600">Buy Now</a>
-    </div>
-    <!-- Product 4 -->
-    <div class=" rounded-xl overflow-hidden p-4">
-      <img src="hoddies images/women/0ca68cba-e567-4edc-a862-0983410dbe27.jpeg" alt="Product 4" class="w-full h-[600px] object-cover rounded-md transition-transform duration-300 hover:scale-105">
-      <h3 class="mt-4 text-lg font-semibold text-gray-800">Casual Wear Set</h3>
-      <div class="flex items-center justify-between mt-2">
-        <div class="text-amber-500 text-sm">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <i class="fa-regular fa-heart text-red-600 text-xl hover:scale-110 transition-transform duration-200 cursor-pointer"></i>
-      </div>
-      <p class="text-amber-600 font-bold mt-2">$44.99</p>
-      <a href="#" class="inline-block mt-4 bg-amber-500 text-white px-4 py-2 rounded hover:bg-amber-600">Buy Now</a>
-    </div>
-    <div class=" rounded-xl overflow-hidden p-4">
-      <img src="/hoddies images/women/29344e94-23d6-47d0-8470-c806d6f8600c.jpeg" alt="Product 4" class="w-full h-[600px] object-cover rounded-md transition-transform duration-300 hover:scale-105">
-      <h3 class="mt-4 text-lg font-semibold text-gray-800">Casual Wear Set</h3>
-      <div class="flex items-center justify-between mt-2">
-        <div class="text-amber-500 text-sm">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <i class="fa-regular fa-heart text-red-600 text-xl hover:scale-110 transition-transform duration-200 cursor-pointer"></i>
-      </div>
-      <p class="text-amber-600 font-bold mt-2">$44.99</p>
-      <a href="#" class="inline-block mt-4 bg-amber-500 text-white px-4 py-2 rounded hover:bg-amber-600">Buy Now</a>
-    </div>
-    <div class="  rounded-xl overflow-hidden p-4">
-      <img src="hoddies images/images/9eb9e7ab-60e1-4970-8552-2d528b80595d.jpeg" alt="Product 4" class="w-full h-[600px] object-cover rounded-md">
-      <h3 class="mt-4 text-lg font-semibold text-gray-800">Olive Hoodies</h3>
-      <div class="flex items-center justify-between mt-2">
-        <div class="text-amber-500 text-sm">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <i class="fa-regular fa-heart text-red-600 text-xl hover:scale-110 transition-transform duration-200 cursor-pointer"></i>
-      </div>
-      <p class="text-amber-600 font-bold mt-2">$44.99</p>
-      <a href="#" class="inline-block mt-4 bg-amber-500 text-white px-4 py-2 rounded hover:bg-amber-600">Buy Now</a>
-    </div>
-     <div class="  rounded-xl overflow-hidden p-4">
-      <img src="hoddies images/grl.jpeg" alt="Product 4" class="w-full h-[600px] object-cover rounded-md">
-      <h3 class="mt-4 text-lg font-semibold text-gray-800">Midnight Silk Abaya</h3>
-      <div class="flex items-center justify-between mt-2">
-        <div class="text-amber-500 text-sm">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <i class="fa-regular fa-heart text-red-600 text-xl hover:scale-110 transition-transform duration-200 cursor-pointer"></i>
-      </div>
-      <p class="text-amber-600 font-bold mt-2">$44.99</p>
-      <a href="#" class="inline-block mt-4 bg-amber-500 text-white px-4 py-2 rounded hover:bg-amber-600">Buy Now</a>
-    </div>
-    
-   
-    
-        <div class="  rounded-xl overflow-hidden p-4">
-      <img src="hoddies images/347e1266-bc1b-4585-9025-f62626eaf308.jpeg" alt="Product 4" class="w-full h-[600px] object-cover rounded-md">
-      <h3 class="mt-4 text-lg font-semibold text-gray-800">Rolex Submariner </h3>
-      <div class="flex items-center justify-between mt-2">
-        <div class="text-amber-500 text-sm">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <i class="fa-regular fa-heart text-red-600 text-xl hover:scale-110 transition-transform duration-200 cursor-pointer"></i>
-      </div>
-      <p class="text-amber-600 font-bold mt-2">$44.99</p>
-      <a href="#" class="inline-block mt-4 bg-amber-500 text-white px-4 py-2 rounded hover:bg-amber-600">Buy Now</a>
-    </div>
-     <div class="  rounded-xl overflow-hidden p-4">
-      <img src="hoddies images//message girls to order this beautiful abaya less….jpeg" alt="Product 4" class="w-full h-[600px] object-cover rounded-md">
-      <h3 class="mt-4 text-lg font-semibold text-gray-800">Elegant Black Abaya</h3>
-      <div class="flex items-center justify-between mt-2">
-        <div class="text-amber-500 text-sm">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <i class="fa-regular fa-heart text-red-600 text-xl hover:scale-110 transition-transform duration-200 cursor-pointer"></i>
-      </div>
-      <p class="text-amber-600 font-bold mt-2">$44.99</p>
-      <a href="#" class="inline-block mt-4 bg-amber-500 text-white px-4 py-2 rounded hover:bg-amber-600">Buy Now</a>
-    </div>
-        <div class="  rounded-xl overflow-hidden p-4">
-      <img src="hoddies images/Dynamo Black Watch _ MVMT.jpeg" alt="Product 4" class="w-full h-[600px] object-cover rounded-md">
-      <h3 class="mt-4 text-lg font-semibold text-gray-800">Rolex Submariner Black </h3>
-      <div class="flex items-center justify-between mt-2">
-        <div class="text-amber-500 text-sm">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <i class="fa-regular fa-heart text-red-600 text-xl hover:scale-110 transition-transform duration-200 cursor-pointer"></i>
-      </div>
-      <p class="text-amber-600 font-bold mt-2">$94.99</p>
-      <a href="#" class="inline-block mt-4 bg-amber-500 text-white px-4 py-2 rounded hover:bg-amber-600">Buy Now</a>
-    </div>
-    
   </div>
 </section>
+
 
 
 <!-- Discount Section -->
@@ -445,21 +165,20 @@
     </a>
   </div>
 </section>
-
-<footer class="bg-amber-700/30 text-white px-6 py-10">
+<footer class="bg-amber-700/30 text-black px-6 py-10">
   <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
     
     <!-- Brand Section -->
     <div>
-      <h1 class="text-5xl logo pb-4">RK <span class="text-amber-500">Trends</span></h1
+      <h1 class="text-5xl logo pb-4">RK <span class="text-amber-500">Trends</span></h1>
       <p class="text-sm leading-relaxed">
         Discover the latest fashion trends for men, women, and kids. At RK Trends, style meets comfort with quality you can trust — your one-stop shop for everyday essentials and occasion wear.
       </p>
-      <div class="flex space-x-4 mt-4">
-        <a href="#" class="text-white text-xl hover:text-amber-400"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="text-white text-xl hover:text-amber-400"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-white text-xl hover:text-amber-400"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="text-white text-xl hover:text-amber-400"><i class="fab fa-pinterest-p"></i></a>
+      <div class="flex space-x-4 mt-4 text-black">
+        <a href="#" class=" text-xl hover:text-amber-700"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class=" text-xl hover:text-amber-700"><i class="fab fa-twitter"></i></a>
+        <a href="#" class=" text-xl hover:text-amber-700"><i class="fab fa-instagram"></i></a>
+        <a href="#" class=" text-xl hover:text-amber-700"><i class="fab fa-pinterest-p"></i></a>
       </div>
     </div>
 
@@ -474,12 +193,11 @@
     <!-- Shop Links -->
     <div>
       <h3 class="text-xl font-bold mb-4">Shop</h3>
-      <ul class="space-y-2">
+      <ul class="space-y-2 ">
         <li><a href="#" class="hover:text-amber-400">Home</a></li>
         <li><a href="#" class="hover:text-amber-400">Women</a></li>
         <li><a href="#" class="hover:text-amber-400">Men</a></li>
-        <li><a href="#" class="hover:text-amber-400">Kids</a></li>
-        <li><a href="#" class="hover:text-amber-400">Accessories</a></li>
+        <li><a href="#" class="hover:text-amber-400">Electronics</a></li>
         <li><a href="#" class="hover:text-amber-400">Contact</a></li>
       </ul>
     </div>
@@ -500,11 +218,8 @@
   </div>
 </footer>
 
-
-
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
   <script>
     const swiper = new Swiper(".mySwiper", {
       loop: true,
@@ -519,5 +234,7 @@
       autoHeight: true,
     });
   </script>
+
+  <script src="./js files/script.js"></script>
 </body>
 </html>
