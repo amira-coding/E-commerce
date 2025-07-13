@@ -62,12 +62,61 @@
   </div>
 </header>
 
-  <div class="max-w-4xl mx-auto p-6 mt-28 bg-white shadow-md rounded-lg" id="container">
-   
+  <div class="max-w-4xl mx-auto p-6 mt-28 bg-white shadow-md rounded-lg flex  gap-28" id="container">
+      
+
   </div>
 
   <script>
-    
+    //  const cart = document.getElementById('cartIcon')
+    // const cartCount = document.getElementById('cartCount')
+
+    // let storage =JSON.parse(localStorage.getItem('cart'))
+    // storage.forEach(element => {
+    //   const div = document.getElementById(div)
+    //   div.innerHTML = 
+    //   `<div>
+    //     <img src="./images/images/1 copy.jpg" alt="" class="w-[200px] rounded-lg">
+    //   </div>
+    //   <div class="flex gap-24">
+    //     <h1>Title</h1>
+    //     <p>X</p>
+    //   </div>`
+    // });
+
+    const container = document.getElementById('container');
+const storage = JSON.parse(localStorage.getItem('cart')) || [];
+
+container.innerHTML = ''; // Clear before adding
+
+storage.forEach((product, index) => {
+  const div = document.createElement('div');
+  div.className = "flex items-center gap-6 p-4 border rounded-lg shadow";
+
+  div.innerHTML = `
+    <img src="${product.image}" alt="${product.title}" class="w-32 h-32 object-contain rounded-lg" />
+    <div class="flex-1">
+      <h2 class="text-xl font-semibold">${product.title}</h2>
+    </div>
+    <button 
+      class="text-red-600 text-2xl font-bold hover:text-red-800"
+      aria-label="Remove item"
+      onclick="removeItem(${index})"
+    >
+      &times;
+    </button>
+  `;
+
+  container.appendChild(div);
+});
+
+// Function to remove an item by index and update localStorage + UI
+function removeItem(index) {
+  storage.splice(index, 1);
+  localStorage.setItem('cart', JSON.stringify(storage));
+  location.reload(); // reload page to update UI simply
+}
+
   </script>
 </body>
 </html>

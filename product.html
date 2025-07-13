@@ -61,15 +61,12 @@
 </header>
   <div class="max-w-4xl mx-auto p-6 bg-white shadow-md mt-10 rounded- pt-12" id="product-details">
      
-      <!-- <button id="buyBtn" class="bg-yellow-500 text-white px-4 py-2 rounded">
-        Buy Now
-      </button> -->
 
   </div>
 
   <script>
     const path = window.location.href;
-  const id = path.split('=')[1];
+   const id = path.split('=')[1];
     
     const container = document.getElementById('product-details');
      const btn = document.getElementById('buyBtn');
@@ -91,17 +88,20 @@
                   <span class="text-sm text-gray-500">${data.rating.count} reviews)</span>
                 </span>
               </div>
-               <a href = 'cart.html'>
+            
               <button id="buyBtn" class="bg-amber-500 text-white px-6 py-3 rounded hover:bg-amber-600 transition">
                 Add to Cart
               </button>
-              </a>
+            
             </div>
           </div>
         `;
         const btn = document.getElementById('buyBtn')
         btn.addEventListener('click', () => {
-          localStorage.setItem('cart', data.id)
+      
+          console.log(data);
+          
+          localStorage.setItem('cart', JSON.stringify(data))
           
         })
       })
@@ -112,11 +112,7 @@
 
     // add to cart
     
-    const cart = document.getElementById('cartIcon')
-    const cartCount = document.getElementById('cartCount')
-    cart.addEventListener('click', function(){
-      let storage = localStorage.getItem('key', container)
-    })
+   
   </script>
 
 </body>
