@@ -22,7 +22,7 @@ function getJson() {
           
           <div class="flex justify-start">
             <a href="product.html?id=${product.id}" 
-               class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition">
+               class="bg-yellow-500 text-black px-4 py-2 rounded hover:bg-yellow-600 transition">
               Buy Now
             </a>
           </div>
@@ -36,3 +36,12 @@ function getJson() {
 
   getJson();
 
+ // cart
+      function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCountElement = document.getElementById('cart-count');
+    cartCountElement.textContent = cart.length;
+  }
+
+  // Call it immediately
+  updateCartCount();

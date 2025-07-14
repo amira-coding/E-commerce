@@ -7,9 +7,9 @@ function getJson() {
       console.log(data);
 
       // Filtering women's collection 
-      const womensProducts = data.filter(product => product.category === "women's clothing");
+      const elect = data.filter(product => product.category === "electronics");
 
-      womensProducts.forEach(product => {
+      elect.forEach(product => {
         const div = document.createElement('div');
         div.className = "bg-white rounded-lg py-6 px-4 shadow";
 
@@ -20,7 +20,7 @@ function getJson() {
           <p class="text-sm text-gray-500 italic mb-1">${product.category}</p>
           <p class="text-yellow-600 mb-4">Rating: ${product.rating.rate} (${product.rating.count} reviews)</p>
           <a href="product.html?id=${product.id}" 
-             class="inline-block bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition">
+             class="inline-block bg-yellow-500 text-black px-4 py-2 rounded hover:bg-yellow-600 transition">
             Buy Now
           </a>
         `;
@@ -33,3 +33,13 @@ function getJson() {
 
 
   getJson();
+
+     // cart
+    function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCountElement = document.getElementById('cart-count');
+    cartCountElement.textContent = cart.length;
+  }
+
+  // Call it immediately
+  updateCartCount();

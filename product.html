@@ -6,9 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet"/>
+  <style>
+    .font-hand {
+      font-family: 'Patrick Hand', cursive;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-    <header class="fixed top-0 left-0 right-0 z-50 container mx-auto px-4">
+
+<body class="container mx-auto bg-white">
+<header class="fixed top-0 left-0 right-0 z-50 container mx-auto px-4">
   <div class="relative">
     <input type="checkbox" id="menu-toggle" class="hidden peer" />
 
@@ -30,8 +37,8 @@
       <div class="hidden md:flex space-x-4 text-black text-2xl">
         <i class="fa-regular fa-heart text-red-700 hover:-translate-y-1 transition"></i>
         <a href="cart.html" class="relative hover:-translate-y-1 transition">
-          <i class="fa-solid fa-cart-shopping" id="cartIcon"></i>
-          <span id="cartCount" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cart-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
         </a>
         <i class="fa-solid fa-user hover:-translate-y-1 transition"></i>
       </div>
@@ -59,61 +66,76 @@
     </div>
   </div>
 </header>
-  <div class="max-w-4xl mx-auto p-6 bg-white shadow-md mt-10 rounded- pt-12" id="product-details">
-     
 
-  </div>
+<div class="max-w-4xl mx-auto p-6 bg-white shadow-md mt-10 rounded- pt-20" id="product-details"></div>
 
-  <script>
-    const path = window.location.href;
-   const id = path.split('=')[1];
-    
-    const container = document.getElementById('product-details');
-     const btn = document.getElementById('buyBtn');
-    fetch("https://fakestoreapi.com/products/" + id)
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        container.innerHTML = `
-          <div class="flex flex-col md:flex-row gap-10">
-            <img src="${data.image}" alt="${data.title}" class="w-full md:w-1/2 object-cover rounded-lg">
-            <div class="flex-1 space-y-4">
-              <h1 class="text-3xl font-bold">${data.title}</h1>
-              <p class="text-sm text-gray-500">${data.category}</p>
-              <p class="text-lg text-gray-700">${data.description}</p>
-              <div class="flex items-center gap-4">
-                <span class="text-2xl font-bold text-amber-600">$${data.price}</span>
-                <span class="text-yellow-500">
-                  ${'★'.repeat(Math.floor(data.rating?.rate || 5))}
-                  <span class="text-sm text-gray-500">${data.rating.count} reviews)</span>
-                </span>
-              </div>
-            
-              <button id="buyBtn" class="bg-amber-500 text-white px-6 py-3 rounded hover:bg-amber-600 transition">
-                Add to Cart
-              </button>
-            
+<script>
+  window.scrollTo(0, 0); // scroll to top on load
+
+  const path = window.location.href;
+  const id = path.split('=')[1];
+  const container = document.getElementById('product-details');
+
+  fetch("https://fakestoreapi.com/products/" + id)
+    .then(res => res.json())
+    .then(data => {
+      container.innerHTML = `
+        <div class="flex flex-col md:flex-row gap-10">
+          <img src="${data.image}" alt="${data.title}" class="w-full md:w-1/2 object-cover rounded-lg">
+          <div class="flex-1 space-y-4">
+            <h1 class="text-3xl font-bold">${data.title}</h1>
+            <p class="text-sm text-gray-500">${data.category}</p>
+            <p class="text-lg text-gray-700">${data.description}</p>
+            <div class="flex items-center gap-4">
+              <span class="text-2xl font-bold text-amber-600">$${data.price}</span>
+              <span class="text-yellow-500">
+                ${'★'.repeat(Math.floor(data.rating?.rate || 5))}
+                <span class="text-sm text-gray-500">(${data.rating.count} reviews)</span>
+              </span>
             </div>
+            <button id="buyBtn" class="bg-amber-500 text-black px-6 py-3 rounded hover:bg-amber-600 transition">
+              Add to Cart
+            </button>
           </div>
-        `;
-        const btn = document.getElementById('buyBtn')
-        btn.addEventListener('click', () => {
-      
-          console.log(data);
-          
-          localStorage.setItem('cart', JSON.stringify(data))
-          
-        })
-      })
-      .catch(error => {
-        console.error(error);
-       
-      });
+        </div>
+      `;
 
-    // add to cart
-    
-   
-  </script>
+      document.getElementById('buyBtn').addEventListener('click', () => {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        const existingItem = cart.find(item => item.id === data.id);
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cart.push({
+            id: data.id,
+            title: data.title,
+            price: data.price,
+            image: data.image,
+            quantity: 1
+          });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        window.location.href = 'cart.html';
+      });
+    })
+    .catch(error => {
+      console.error(error);
+      container.innerHTML = '<p class="text-red-500">Failed to load product details.</p>';
+    });
+
+  // Update cart count in navbar
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCountElement = document.getElementById('cart-count');
+    if (cartCountElement) {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      cartCountElement.textContent = totalItems;
+    }
+  }
+  updateCartCount();
+</script>
 
 </body>
 </html>

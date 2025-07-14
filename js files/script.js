@@ -20,7 +20,7 @@
                 <p class="text-yellow-600">Rating: ${product.rating.rate} (${product.rating.count} reviews)</p>
               </div>
               <a href="product.html?id=${product.id}" 
-                 class="mt-4 inline-block bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition">
+                 class="mt-4 inline-block bg-yellow-500 text-black px-4 py-2 rounded hover:bg-yellow-600 transition">
                 Buy Now
               </a>
             `;
@@ -32,3 +32,15 @@
     }
 
     getJson();
+
+
+
+    // cart
+      function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCountElement = document.getElementById('cart-count');
+    cartCountElement.textContent = cart.length;
+  }
+
+  // Call it immediately
+  updateCartCount();
