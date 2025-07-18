@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Favorites - RK Trends</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body class="container mx-auto p-6 bg-white">
+
+  <header class="mb-6">
+    <h1 class="text-4xl font-bold mb-4">Favorite Products</h1>
+    <a href="index.html" class="text-amber-600 hover:underline">Back to Shop</a>
+  </header>
+
+  <div id="favorites-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4"></div>
+
+  <script>
+    const container = document.getElementById('favorites-container');
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+    function saveFavorites() {
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
+
+    function removeFavorite(id, iconEl, cardEl) {
+      // Remove ID from localStorage
+      favorites = favorites.filter(favId => favId !== id);
+      saveFavorites();
+
+      // Switch icon to outline
+      iconEl.classList.remove('fas', 'text-red-500');
+      iconEl.classList.add('far', 'text-gray-400');
+
+      // Remove card from page
+      cardEl.remove();
+
+      // Show empty message if none left
+      if (favorites.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full text-center text-gray-600 text-xl">
+            You have no favorite products yet.
+          </div>
+        `;
+      }
+    }
+
+    fetch('https://fakestoreapi.com/products/')
+      .then(res => res.json())
+      .then(products => {
+        const favProducts = products.filter(p => favorites.includes(p.id));
+
+        if (favProducts.length === 0) {
+          container.innerHTML = `
+            <div class="col-span-full text-center text-gray-600 text-xl">
+              You have no favorite products yet.
+            </div>
+          `;
+          return;
+        }
+
+        favProducts.forEach(product => {
+          const card = document.createElement('div');
+          card.className = 'product-card bg-white shadow-lg rounded-xl overflow-hidden p-4 relative';
+
+          card.innerHTML = `
+            <img src="${product.image}" alt="${product.title}" class="w-full h-48 object-contain mb-4">
+            <h2 class="text-lg font-semibold mb-2">${product.title}</h2>
+            <p class="text-gray-700 mb-2">$${product.price}</p>
+            <button class="absolute top-3 right-3 text-xl">
+              <i class="fas fa-heart text-red-500 heart-icon"></i>
+            </button>
+          `;
+
+          const icon = card.querySelector('.heart-icon');
+          icon.addEventListener('click', () => removeFavorite(product.id, icon, card));
+
+          container.appendChild(card);
+        });
+      });
+  </script>
+
+</body>
+</html>

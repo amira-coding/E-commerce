@@ -36,12 +36,17 @@ function getJson() {
 
   getJson();
 
- // cart
-      function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartCountElement = document.getElementById('cart-count');
-    cartCountElement.textContent = cart.length;
+// CART
+function showCartNumber() {
+  let cart = localStorage.getItem('cart');
+  if (cart) {
+    cart = JSON.parse(cart);
+  } else {
+    cart = [];
   }
 
-  // Call it immediately
-  updateCartCount();
+  let countBox = document.getElementById('cart-count');
+  if (countBox) {
+    countBox.textContent = cart.length;
+  }
+}
