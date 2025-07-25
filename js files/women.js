@@ -49,3 +49,5 @@ function showCartNumber() {
     countBox.textContent = cart.length;
   }
 }
+
+showCartNumber();

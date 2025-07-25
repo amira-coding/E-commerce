@@ -1,19 +1,19 @@
 const container = document.getElementById('product-container');
 
-// ========== 1. GET PRODUCTS FROM API ==========
+//  1. GET PRODUCTS FROM API 
 function getAllProducts() {
   fetch('https://fakestoreapi.com/products/')
     .then(res => res.json())
     .then(products => {
       showProducts(products);        // show products in page
-      addHeartClickEvents();         // let hearts work
-      showCartItemCount();           // show cart count in navbar
+      addHeartClickEvents();         
+      showCartCount();               
     })
     .catch(error => console.error("Error loading products:", error));
 }
 
-// CART
-function showCartNumber() {
+//   SHOW CART ITEM COUNT 
+function showCartCount() {
   let cart = localStorage.getItem('cart');
   if (cart) {
     cart = JSON.parse(cart);
@@ -26,7 +26,6 @@ function showCartNumber() {
     countBox.textContent = cart.length;
   }
 }
-
 
 //  FAVORITES 
 let favoriteList = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -46,24 +45,20 @@ function likeOrUnlike(productId) {
     favoriteList.push(productId);
   }
   saveFavoriteList();
-  getAllProducts();
+  getAllProducts(); // refresh products with updated hearts
 }
 
 //  SHOW PRODUCTS ON PAGE 
 function showProducts(products) {
   container.innerHTML = '';
 
-   products.forEach(product => {
+  products.forEach(product => {
     const div = document.createElement('div');
     div.className = "bg-white shadow-md rounded-xl overflow-hidden p-4 relative";
 
-    let heartIconClass = '';
-
-    if (isProductFavorite(product.id)) {
-      heartIconClass = 'fa-solid text-red-600';
-    } else {
-      heartIconClass = 'fa-regular text-gray-400 hover:text-red-600 cursor-pointer';
-    }
+    let heartIconClass = isProductFavorite(product.id)
+      ? 'fa-solid text-red-600'
+      : 'fa-regular text-gray-400 hover:text-red-600 cursor-pointer';
 
     div.innerHTML = `
       <img src="${product.image}" alt="${product.title}" class="mb-4 w-full h-48 object-contain rounded-md">
@@ -103,5 +98,5 @@ function addHeartClickEvents() {
   });
 }
 
-//  START EVERYTHING
+//   START EVERYTHING 
 getAllProducts();
