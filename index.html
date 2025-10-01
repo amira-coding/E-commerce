@@ -15,147 +15,63 @@
     }
   </style>
 </head>
-<body class="container mx-auto bg-white">
-<header class="fixed top-0 left-0 right-0 z-50 container mx-auto px-4">
-  <div class="relative">
-    <input type="checkbox" id="menu-toggle" class="hidden peer" />
+<body class=" bg-white"><!-- Header -->
+<!-- Header -->
+<header id="header" class="fixed top-0 left-0 right-0 z-50 px-4 transition-all duration-300">
+  <div class="max-w-7xl mx-auto flex justify-between items-center py-4">
+    <!-- Logo -->
+    <div class="logo text-white">
+      <h1 class="text-4xl font-hand">
+        ClickN<span class="text-amber-400">shop</span>
+      </h1>
+    </div>
 
-    <nav class="flex justify-between items-center p-4 bg-gray-200/30 rounded-2xl mt-2 backdrop-blur-md">
-      <div class="logo">
-        <h1 class="text-5xl text-black font-hand">
-          RK <span class="text-amber-500">Trends</span>
-        </h1>
-      </div>
-
-      <div class="hidden md:flex space-x-10 text-black font-semibold text-xl">
-        <a href="./index.html" class="hover:text-amber-500 transition">Home</a>
-        <a href="/women.html" class="hover:text-amber-500 transition">Women</a>
-        <a href="/men.html" class="hover:text-amber-500 transition">Men</a>
-        <a href="/kids.html" class="hover:text-amber-500 transition">Electronics</a>
-        <a href="/contact.html" class="hover:text-amber-500 transition">Contact</a>
-      </div>
-
-      <div class="hidden md:flex space-x-4 text-black text-2xl">
-      <a href="favorites.html" class="relative text-2xl text-red-700 hover:-translate-y-1 transition">
-        <i class="fa-solid fa-heart"></i>
-
-      </a>
-        <a href="cart.html" class="relative hover:-translate-y-1 transition">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <span id="cart-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
-        </a>
-        <i class="fa-solid fa-user hover:-translate-y-1 transition"></i>
-      </div>
-
-      <label for="menu-toggle" class="md:hidden text-black text-3xl cursor-pointer z-50">
-        <i class="fa-solid fa-bars"></i>
-      </label>
+    <!-- Nav Links -->
+    <nav class="hidden md:flex space-x-8 text-white font-semibold text-lg">
+      <a href="./index.html" class="hover:text-amber-300 transition">Home</a>
+      <a href="/women.html" class="hover:text-amber-300 transition">Women</a>
+      <a href="/men.html" class="hover:text-amber-300 transition">Men</a>
+      <a href="/kids.html" class="hover:text-amber-300 transition">Electronics</a>
+      <a href="/contact.html" class="hover:text-amber-300 transition">Contact</a>
     </nav>
 
-    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 peer-checked:opacity-100 peer-checked:pointer-events-auto md:hidden z-40"></div>
-
-    <div class="fixed top-0 right-0 w-3/4 max-w-xs h-full bg-amber-600 text-black shadow-lg translate-x-full transition-transform duration-300 peer-checked:translate-x-0 md:hidden rounded-l-2xl z-50">
-      <div class="flex justify-end p-4">
-        <label for="menu-toggle" class="text-3xl text-black cursor-pointer">
-          <i class="fa-solid fa-times"></i>
-        </label>
-      </div>
-      <nav class="flex flex-col space-y-6 px-6 text-xl font-semibold">
-        <a href="./index.html" class="hover:text-gray-800">Home</a>
-        <a href="/women.html" class="hover:text-gray-800">Women</a>
-        <a href="/men.html" class="hover:text-gray-800">Men</a>
-        <a href="/kids.html" class="hover:text-gray-800">Electronics</a>
-        <a href="/contact.html" class="hover:text-gray-800">Contact</a>
-      </nav>
+    <!-- Icons -->
+    <div class="hidden md:flex space-x-4 text-white text-2xl">
+      <a href="favorites.html"><i class="fa-solid fa-heart"></i></a>
+      <a href="cart.html" class="relative">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+      </a>
+      <i class="fa-solid fa-user"></i>
     </div>
   </div>
 </header>
 
-
-<!-- Swiper Slider -->
-<section class="my-10">
-  <div class="container mx-auto px-4">
-    <div class="swiper mySwiper min-h-[80vh]">
-      <div class="swiper-wrapper">
-        <!-- Slide 1 -->
-        <div class="swiper-slide flex flex-col md:flex-row items-center gap-12 py-10 px-4">
-          <div class="md:w-1/2 text-black mt-0">
-            <h1 class="logo md:text-9xl text-6xl font-bold tracking-wide leading-snug">
-              Discover Your Style with <span class="text-amber-500">RK Trends</span>
-            </h1>
-            <p class="mt-6 text-lg md:text-2xl text-gray-700">
-              From everyday essentials to standout statement pieces — find the
-              fashion that fits your vibe.
-            </p>
-            <a href="#product-container">
-              <button class="mt-8 bg-amber-500 text-black px-8 py-3 rounded-lg hover:bg-amber-600 transition duration-300 flex items-center gap-2">
-                Shop Now <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </a>
-          </div>
-          <div class="md:w-1/2 w-full">
-            <img src="/hoddies images/images/bann2.png" alt="Fashion banner" class="rounded-lg md:w-full object-cover" />
-          </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="swiper-slide flex flex-col md:flex-row items-center gap-12 py-10 px-4">
-          <div class="md:w-1/2 text-gray-900">
-            <h1 class="logo text-6xl md:text-9xl font-bold tracking-wide leading-tight">
-              The Baati Gang Vibe 
-            </h1>
-            <p class="mt-6 text-lg md:text-xl text-gray-700">
-              Baati Gang style — bold, vibrant, and uniquely you. From everyday comfort to standout designs, dress your story with RK Trends.
-            </p>
-            <a href="#product-container">
-              <button class="mt-8 bg-amber-500 text-black px-8 py-3 rounded-lg hover:bg-amber-600 transition duration-300 flex items-center gap-2">
-                Shop Now <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </a>
-          </div>
-          <div class="md:w-1/2 w-full">
-            <img src="./hoddies images/images/4afd6445-9984-4890-b207-f051d718ec8f-removebg-preview.png" alt="Fashion banner" class="w-[900px] h-[50%] object-cover" />
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="swiper-slide flex flex-col md:flex-row items-center gap-12 py-10 px-4">
-          <div class="md:w-1/2 text-gray-900">
-            <h1 class="logo text-6xl md:text-9xl font-bold tracking-wide leading-tight">
-              Discover Your Style with <span class="text-amber-500">RK Trends</span>
-            </h1>
-            <p class="mt-6 text-lg md:text-xl text-gray-700">
-              From everyday essentials to standout statement pieces — find the
-              fashion that fits your vibe.
-            </p>
-            <a href="#product-container">
-              <button class="mt-8 bg-amber-500 text-black px-8 py-3 rounded-lg hover:bg-amber-600 transition duration-300 flex items-center gap-2">
-                Shop Now <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </a>
-          </div>
-          <div class="md:w-1/2 w-full">
-            <img src="./hoddies images/53e80d83-bb6c-46f2-9b10-afb73a2d9075-removebg-preview.png" alt="Fashion banner" class="w-[900px] h-[50%] object-cover" />
-          </div>
-        </div>
-
-        
-
-      </div>
-
-      <!-- Pagination -->
-      <div class="swiper-pagination"></div>
+<!-- Hero Section -->
+<section class="relative h-screen bg-cover bg-center" style="background-image: url('./images/images/Happy muslim girl posing with shopping b….jpeg');">
+  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="relative z-10 flex flex-col items-center justify-center text-center h-full px-6">
+    <div class="mb-6">
+      <span class="bg-white/10 text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center gap-2">
+        ⚡ ClickNShop
+      </span>
     </div>
-
-    <!-- Navigation buttons -->
-    <div class="md:flex hidden justify-center space-x-6 mt-4 text-gray-700 hover:text-amber-500">
-      <div class="swiper-button-prev cursor-pointer text-2xl p-4 rounded-full   text-amber-500 font-bold"></div>
-     <div class="swiper-button-next cursor-pointer text-2xl p-4 rounded-full   text-amber-500 font-bold"></div>
+    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
+      Shop & Book Your <span class="text-amber-400">Favorites</span><br/>
+      Instantly
+    </h1>
+    <p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl">
+      Products, services, and bookings – all in one place.
+    </p>
+    <a href="#products" class="mt-6 inline-block bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-xl text-lg font-semibold shadow-md transition">
+      Shop Now →
+    </a>
   </div>
 </section>
 
+
 <!-- Product Grid Section -->
-<section class="my-16 px-6">
+<section class="my-16 px-6 container mx-auto">
   <h2 class="text-3xl font-bold mb-8 text-center">All Products</h2>
   <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     <!-- Products will be inserted here -->
@@ -174,12 +90,14 @@
     </a>
   </div>
 </section>
-<footer class="bg-amber-700/30 text-black px-6 py-10">
+<footer class="bg-gray-500/30 text-black px-6 py-10">
   <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
     
     <!-- Brand Section -->
     <div>
-      <h1 class="text-5xl logo pb-4">RK <span class="text-amber-500">Trends</span></h1>
+       <h1 class="text-4xl font-hand">
+        ClickN<span class="text-amber-500 mb-2">shop</span>
+      </h1>
       <p class="text-sm leading-relaxed">
         Discover the latest fashion trends for men, women, and kids. At RK Trends, style meets comfort with quality you can trust — your one-stop shop for everyday essentials and occasion wear.
       </p>

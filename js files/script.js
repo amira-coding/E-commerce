@@ -100,3 +100,16 @@ function addHeartClickEvents() {
 
 //   START EVERYTHING 
 getAllProducts();
+
+
+const header = document.getElementById('header');
+
+  // Listen to scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('bg-gray-900/70', 'backdrop-blur-md', 'shadow-md');
+      header.classList.remove('text-white');
+    } else {
+      header.classList.remove('bg-gray-900/70', 'backdrop-blur-md', 'shadow-md');
+    }
+  });
